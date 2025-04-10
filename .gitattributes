@@ -1,2 +1,95 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+
+</html>
+
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <title>Kvadrāta kontrole</title>
+  <style>
+    /* Простое оформление для canvas */
+    canvas {
+      border: 1px solid #000;
+      display: block;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+    <h1>Palavanas smirdīgais āpsis (Mydaus marchei)</h1>
+    <p>
+      Palavanas smirdīgais āpsis (Mydaus marchei) ir vidēja auguma skunksu
+      dzimtas (Mephitidae) plēsējs, kas pieder smirdīgo āpšu ģintij (Mydaus).
+      Palavanas smirdīgais āpsis ir sastopamas divās Sulu jūras salās: Palavanā
+      un Busuangā. To var sastapt atklātās vietās; biezajā un garajā zālē un
+      kultivētās lauksaimniecības zemēs. Palavanas smirdīgā āpša klasifikācijā
+      joprojām nav vienprātības zinātnieku starpā. Pastāv vairākas
+      sistematizācijas. Viena no tām iedala Palavanas smirdīgo āpsi pie āpšiem,
+      jo tā morfoloģija un uzvedība ir līdzīga āpšiem, bet jaunākā sistēma Javas
+      smirdīgo āpsi iedala skunksu dzimtā, jo DNS pētījumi pierāda smirdīgo āpšu
+      radniecību tieši ar skunksiem, nevis āpšiem. Reizēm Palavanas smirdīgo
+      āpsi izdala atsevišķā ģintī Suillotaxus.
+    </p>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/2/27/Mydaus_marchei_Palawan_stink_badger_Huet_1887.jpg"
+      alt="Attēls ar Palavanas smirdīgais āpsis"
+      style="max-width: 300px"
+    />
+    <p>
+      Lai uzzinātu vairāk par lauvām, apmeklē
+      <a
+        href="https://lv.wikipedia.org/wiki/Palavanas_smirdīgais_āpsis"
+        target="_blank"
+        >Vikipēdijas lapu</a
+      >
+    </p>
+
+  <canvas id="canv" width="300" height="300"></canvas>
+  <script>
+    let squareColor = 'black';
+
+      const canv = document.getElementById('canv');
+      const ctx = canv.getContext('2d');
+      let x = 0;
+      let y = 0;
+
+      function draw() {
+          ctx.fillStyle = 'white';
+          ctx.fillRect(0, 0, 300, 300);
+          ctx.fillStyle = squareColor;
+          ctx.fillRect(x, y, 30, 30);
+      }
+      function move(event) {
+          if (event.key === 'ArrowRight') {
+              x = x + 10;
+          }
+          if (event.key === 'ArrowLeft') {
+              x = x - 10;
+          }
+          if (event.key === 'ArrowUp') {
+              y = y - 10;
+          }
+          if (event.key === 'ArrowDown') {
+              y = y + 10;
+          }
+          let key = event.key.toUpperCase();
+      if (key === 'G') {
+          squareColor = 'green';
+      }
+      if (key === 'B') {
+          squareColor = 'black';
+      }
+      if (key === 'O') {
+          squareColor = 'orange';
+      }
+      }
+
+      
+  
+      addEventListener('keydown', move);
+      setInterval(draw, 10);
+
+  </script>
+  </script>
+</body>
+</html>
